@@ -1,5 +1,5 @@
 <?php
-	if ($_POST['разместить'])
+	if ($_POST['submit'])
 	{
 		$a = (int)$_POST['first'];
 		$b = (int)$_POST['second'];
