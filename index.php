@@ -1,20 +1,19 @@
 <?php
 	if ($_POST['разместить'])
 	{
-		$a = (int)$_POST['первое'];
-		$b = (int)$_POST['второе'];
-		$p = $_POST ['операция'];
-		$c;
-			if($p=='+'
+		$a = (int)$_POST['first'];
+		$b = (int)$_POST['second'];
+		$p = $_POST ['operation'];
+			if($p=='+')
 				$c = $a + $b;
-			else if($p=='-'
+			else if($p=='-')
 				$c = $a - $b;
-			else if($p=='*'
+			else if($p=='*')
 				$c = $a * $b;
-			else if($p=='/'
+			else if($p=='/')
 			{
 				if ($b==0)
-					echo "Вы не можете делить на ноль"
+					echo "You cannot divide by zero;"
 				else $c = $a / $b;
 			}
 			else $c = pow($a, $b);
@@ -22,9 +21,9 @@
 		}
 ?>
 <form action="" method="post">
-	<input type="Текстовое поле" name="первое" required>
+	<input type="textbox" name="first" required>
 	
-	<select name="операция" required>
+	<select name="operation" required>
 	<option value="+">+</option>
 	<option value="-">-</option>
 	<option value="*">*</option>
@@ -32,9 +31,9 @@
 	<option value="^">^</option>
 	</select>
 	
-	<input type="Текстовое поле" name="второе" required>
+	<input type="textbox" name="second" required>
 	
-	<input type="разместить" name="разместить">
+	<input type="submit" name="submit">
 </form>
 <?php
 		echo $c;
